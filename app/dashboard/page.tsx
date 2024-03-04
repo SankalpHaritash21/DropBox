@@ -1,7 +1,8 @@
-import React from "react";
+import { auth } from "@clerk/nextjs";
 
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+  const { userId } = auth();
+  return <div>Dropbok</div>;
 };
 
 export default Dashboard;
