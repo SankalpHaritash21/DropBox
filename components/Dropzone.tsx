@@ -1,13 +1,31 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import DropzoneComponent from "react-dropzone";
 import { cn } from "@/lib/utils";
+import { useUser } from "@clerk/nextjs";
+import {
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  updateDoc,
+} from "firebase/firestore";
+import { db, storage } from "@/firebase";
+import { FileData } from "@/types/type";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 const Dropzone = () => {
+  const [loading, setLoading] = useState(false);
+  const { isLoaded, user, isSignedIn } = useUser();
   // file max fize
   const maxSize = 12582912;
   const onDrop = (acceptedFiles: File[]) => {
     acceptedFiles.forEach((file) => {
+      // Check if the file is a video
+      if (file.type.startsWith("video/")) {
+        console.log("File is a movie, rejecting");
+      }
+
       const reader = new FileReader();
       reader.onabort = () => console.log("File Reading was Aborted");
       reader.onerror = () => console.log("File reading has failed");
@@ -18,8 +36,43 @@ const Dropzone = () => {
     });
   };
 
-  const uploadPost = (selectedFile: File) => {
-    return <div></div>;
+  const uploadPost = async (selectedFile: File) => {
+    if (loading) return;
+    if (!user) return;
+
+    setLoading(true);
+
+    //add fire base
+    const fileData: FileData = {
+      userId: user.id,
+      fileName: selectedFile.name,
+      fullName: user.fullName,
+      profileImg: user.imageUrl,
+      timeStamp: serverTimestamp(), // Assuming serverTimestamp() returns a valid Firestore timestamp
+      type: selectedFile.type,
+      size: selectedFile.size,
+    };
+    try {
+      const docRef = await addDoc(
+        collection(db, "users", user.id, "files"),
+        fileData
+      );
+      console.log("Document written with ID: ", docRef);
+      const imageRef = ref(storage, `users/${user.id}/files/${docRef.id}`);
+
+      //upload file in FireBase
+      uploadBytes(imageRef, selectedFile).then(async (snapShot) => {
+        const downloadUrl = await getDownloadURL(imageRef);
+
+        await updateDoc(doc(db, "users", user.id, "files", docRef.id), {
+          downloadUrl: downloadUrl,
+        });
+      });
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+
+    setLoading(false);
   };
 
   return (
