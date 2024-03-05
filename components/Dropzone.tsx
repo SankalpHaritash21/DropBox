@@ -58,6 +58,7 @@ const Dropzone = () => {
         fileData
       );
       console.log("Document written with ID: ", docRef);
+      console.log(selectedFile);
       const imageRef = ref(storage, `users/${user.id}/files/${docRef.id}`);
 
       //upload file in FireBase
