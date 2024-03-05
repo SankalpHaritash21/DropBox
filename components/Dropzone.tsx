@@ -13,6 +13,7 @@ import {
 import { db, storage } from "@/firebase";
 import { FileData, FileType } from "@/types/type";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { toast } from "react-toastify";
 
 const Dropzone = () => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +24,7 @@ const Dropzone = () => {
     acceptedFiles.forEach((file) => {
       // Check if the file is a video
       if (file.type.startsWith("video/")) {
-        console.log("File is a movie, rejecting");
+        toast.error("File is a movie, rejecting");
       }
 
       const reader = new FileReader();
@@ -54,8 +55,7 @@ const Dropzone = () => {
         type: selectedFile.type,
         size: selectedFile.size,
       });
-      console.log("Document written with ID: ", docRef);
-      console.log(selectedFile);
+
       const imageRef = ref(storage, `users/${user.id}/files/${docRef.id}`);
 
       //upload file in FireBase
@@ -98,7 +98,7 @@ const Dropzone = () => {
               <input {...getInputProps()} />
               {!isDragActive && "Click here or drag files to drop"}
               {isDragActive && !isDragReject && "Drop to upload this file"}
-              {isDragReject && "File type not accepted !!"}
+              {isDragReject && toast.error("File type not accepted !!")}
               {isFileTooLarge && <div> File is Too Lagre</div>}
             </div>
           </section>

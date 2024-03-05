@@ -23,12 +23,11 @@ function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[] }) {
         orderBy("timeStamp", sort)
       )
   );
-  // console.log(docs);
+
   useEffect(() => {
     if (!docs) return;
 
     const files: FileType[] = docs.docs.map((doc) => {
-      console.log("Document data:", doc.data()); // Log the entire document data
       return {
         id: doc.id,
         filename: doc.data().fileName,
