@@ -11,7 +11,6 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db, storage } from "@/firebase";
-import { FileData, FileType } from "@/types/type";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { toast } from "react-toastify";
 
