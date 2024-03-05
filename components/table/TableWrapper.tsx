@@ -31,7 +31,7 @@ function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[] }) {
       console.log("Document data:", doc.data()); // Log the entire document data
       return {
         id: doc.id,
-        filename: doc.data().filename,
+        filename: doc.data().fileName,
         timestamp: new Date(doc.data()?.timeStamp?.seconds * 1000) || null,
         fullName: doc.data().fullName,
         downloadURL: doc.data().downloadUrl,

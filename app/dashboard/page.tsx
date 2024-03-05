@@ -10,7 +10,7 @@ const Dashboard = async () => {
   const docsResults = await getDocs(collection(db, "users", userId!, "files"));
   const skeletonFiles: FileType[] = docsResults.docs.map((doc) => ({
     id: doc.id,
-    filename: doc.data().filename || doc.id,
+    filename: doc.data().fileName || doc.id,
     timestamp: new Date(doc.data()?.timeStamp?.seconds * 1000) || null,
     fullName: doc.data().fullName,
     downloadURL: doc.data().downloadUrl,

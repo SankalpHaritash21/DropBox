@@ -11,7 +11,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db, storage } from "@/firebase";
-import { FileData } from "@/types/type";
+import { FileData, FileType } from "@/types/type";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 const Dropzone = () => {
@@ -43,20 +43,17 @@ const Dropzone = () => {
     setLoading(true);
 
     //add fire base
-    const fileData: FileData = {
-      userId: user.id,
-      fileName: selectedFile.name,
-      fullName: user.fullName,
-      profileImg: user.imageUrl,
-      timeStamp: serverTimestamp(), // Assuming serverTimestamp() returns a valid Firestore timestamp
-      type: selectedFile.type,
-      size: selectedFile.size,
-    };
+
     try {
-      const docRef = await addDoc(
-        collection(db, "users", user.id, "files"),
-        fileData
-      );
+      const docRef = await addDoc(collection(db, "users", user.id, "files"), {
+        userId: user.id,
+        fileName: selectedFile.name,
+        fullName: user.fullName,
+        profileImg: user.imageUrl,
+        timeStamp: serverTimestamp(),
+        type: selectedFile.type,
+        size: selectedFile.size,
+      });
       console.log("Document written with ID: ", docRef);
       console.log(selectedFile);
       const imageRef = ref(storage, `users/${user.id}/files/${docRef.id}`);
