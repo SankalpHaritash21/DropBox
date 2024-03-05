@@ -1,12 +1,10 @@
 "use client";
 
 import {
-  ColumnDef,
   flexRender,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-
 import {
   Table,
   TableBody,
@@ -15,19 +13,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
 import { Button } from "../ui/button";
 import { PencilIcon, TrashIcon } from "lucide-react";
 import { useAppStore } from "@/store/store";
 import { DeleteModal } from "../ui/DeleteModal";
-
-import { FileType } from "@/types/type";
+import { DataTableProps, FileType } from "@/types/type";
 import RenameModal from "../ui/RenameModel";
-
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-}
 
 export function DataTable<TData, TValue>({
   columns,
