@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import drop from "@/public/d.webp";
 import Image from "next/image";
+import Dropbox from "@/public/Dropbox.gif";
 
 export default function Home() {
   return (
@@ -32,16 +33,14 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex flex-col md:flex-row w-full justify-evenly">
-          <div className="w-full md:w-1/2">
-            <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/fmsq1uKOa08?si=rtQlGNR0oBxexbBi?&autoplay=1&mute=1"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
-            </div>
+          <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden">
+            <Image
+              src={Dropbox}
+              alt="Dropbox"
+              height={400}
+              width={400}
+              className="w-full"
+            />
           </div>
           <div className="w-full md:w-1/2 flex items-center justify-center">
             <Image src={drop} alt="DropBox" width={400} height={200} />

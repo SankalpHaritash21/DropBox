@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import drop from "@/public/dropbox.webp";
+import drop from "@/public/doropbox1.webp";
 import { SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 import { ThemeToggle } from "./ThemeToggler";
 
@@ -16,7 +16,7 @@ const Header = () => {
               height={34}
               width={34}
               alt="Dropbox"
-              className="invert"
+              //className="invert mix-blend-multiply"
             />
           </div>
           <h1 className="font-bold text-xl">DROPBOX</h1>

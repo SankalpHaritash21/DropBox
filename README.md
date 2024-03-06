@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Dropbox
 
-## Getting Started
+Next.js Dropbox is a web application designed to provide users with a seamless experience for storing files and PDF documents securely. Leveraging modern web technologies such as Next.js, Tailwind CSS, Shadcn, Firebase, Clerk, and Zustand, this application offers a user-friendly interface coupled with robust backend services.
 
-First, run the development server:
+## Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **User Authentication**: Secure user authentication using Clerk, allowing users to sign up, sign in, and manage their accounts effortlessly.
+- **File Upload**: Users can upload files and PDF documents directly to the application with easy drag-and-drop functionality.
+- **File Storage**: Firebase Cloud Storage ensures efficient and reliable storage of user files, offering scalability and high availability.
+- **Responsive Design**: Responsive design using Tailwind CSS ensures optimal user experience across different devices.
+- **Real-time Updates**: Zustand state management library provides real-time updates on file uploads, downloads, and other actions.
+- **Secure Data Handling**: Prioritizes user data security with encryption, access control, and secure transmission.
+- **PDF Viewing**: Integrated lightweight PDF viewer library Shadcn for users to preview PDF documents within the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: React framework for building server-side rendered and static web applications.
+- **Tailwind CSS**: Utility-first CSS framework for building custom designs quickly.
+- **Shadcn**: Lightweight PDF viewer library for rendering PDF documents in the browser.
+- **Firebase**: Backend-as-a-Service (BaaS) platform for authentication, data storage, and hosting.
+- **Clerk**: Authentication and user management tool providing secure sign-in and account management.
+- **Zustand**: State management library for managing application state efficiently.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+To run the project locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   git clone https://github.com/yourusername/nextjs-dropbox.git
+   ```
