@@ -22,7 +22,7 @@ const Header = () => {
           <h1 className="font-bold text-xl">DROPBOX</h1>
         </Link>
       </div>
-      <div className="px-5 flex items-center gap-x-5">
+      <div className="px-5 flex items-center gap-x-2 md:gap-x-5">
         <ThemeToggle />
         <UserButton afterSignOutUrl="/" />
         <SignedOut>
