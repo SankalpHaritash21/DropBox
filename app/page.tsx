@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="">
       <div className="flex flex-col w-full justify-center">
-        <div className="p-10 flex flex-col bg-[#2B2929] dark:bg-slate-800 text-white space-y-5 w-full justify-center">
+        <div className="p-5 flex flex-col bg-[#2B2929] dark:bg-slate-800 text-white space-y-5 w-full justify-center">
           <h1 className="text-3xl md:text-5xl font-bold">
             Welcome to Dropbox.
             <br />
@@ -43,7 +43,7 @@ export default function Home() {
                 className="w-full rounded-2xl"
               />
             </div>
-            <div className="w-full md:w-1/2 flex flex-col md:items-center items-start justify-center overflow-hidden p-2">
+            <div className="w-full md:w-1/2 flex flex-col md:items-center items-start justify-center overflow-hidden p-5">
               <h2 className="text-2xl md:text-3xl font-bold mb-2">Feature</h2>
               <p className="text-gray-300">
                 <ul>
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col-reverse md:flex-row md:items-center items-start justify-evenly">
-            <div className="w-full md:w-1/2 p-1">
+            <div className="w-full md:w-1/2 px-5 mb-4">
               <ul>
                 <li>
                   Responsive Design: Tailwind CSS enables a responsive layout
