@@ -33,14 +33,14 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex flex-col  w-full justify-evenly">
-          <div className="flex md:flex-row flex-col-reverse justify-evenly my-10 p-10">
-            <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden">
+          <div className="flex md:flex-row flex-col justify-evenly mt-10 mb-3 p-10">
+            <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden rounded-2xl ">
               <Image
                 src={Dropbox}
                 alt="Dropbox"
                 height={400}
                 width={400}
-                className="w-full"
+                className="w-full rounded-2xl"
               />
             </div>
             <div className="w-full md:w-1/2 flex flex-col md:items-center items-start justify-center h-80 overflow-hidden p-10">
@@ -63,15 +63,22 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col-reverse md:flex-row p-10 md:items-center items-start justify-evenly">
-            <div className="w-full md:w-1/2">
-              Responsive Design: Tailwind CSS enables a responsive layout for
-              optimal viewing on various devices. Real-time Updates: Zustand
-              provides real-time updates on file actions for enhanced user
-              engagement. Secure Data Handling: Encryption, access control, and
-              secure transmission protocols prioritize user data security. PDF
-              Viewing: Integrated lightweight PDF viewer library (Shadcn) allows
-              users to preview PDFs within the application.
+          <div className="flex flex-col md:flex-row p-10 md:items-center items-start justify-evenly">
+            <div className="w-full md:w-1/2 p-5">
+              <ul>
+                <li>
+                  Responsive Design: Tailwind CSS enables a responsive layout
+                  for optimal viewing on various devices.
+                </li>
+                <li>
+                  Real-time Updates: Zustand provides real-time updates on file
+                  actions for enhanced user engagement.{" "}
+                </li>
+                <li>
+                  Secure Data Handling: Encryption, access control, and secure
+                  transmission protocols prioritize user data security.
+                </li>
+              </ul>
             </div>
             <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden">
               <Image
