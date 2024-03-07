@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import drop from "@/public/d.webp";
+import drop from "@/public/Dropbox1.webp";
 import Image from "next/image";
 import Dropbox from "@/public/Dropbox.gif";
 
@@ -32,18 +32,56 @@ export default function Home() {
             <ArrowRight className="ml-10" />
           </Link>
         </div>
-        <div className="flex flex-col md:flex-row w-full justify-evenly">
-          <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden">
-            <Image
-              src={Dropbox}
-              alt="Dropbox"
-              height={400}
-              width={400}
-              className="w-full"
-            />
+        <div className="flex flex-col  w-full justify-evenly">
+          <div className="flex md:flex-row flex-col-reverse justify-evenly my-10 p-10">
+            <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden">
+              <Image
+                src={Dropbox}
+                alt="Dropbox"
+                height={400}
+                width={400}
+                className="w-full"
+              />
+            </div>
+            <div className="w-full md:w-1/2 flex flex-col md:items-center items-start justify-center h-80 overflow-hidden p-10">
+              <h2 className="text-lg md:text-2xl font-bold mb-2">Feature</h2>
+              <p className="text-gray-30000">
+                <ul>
+                  <li>
+                    User Authentication: Secure sign-up, sign-in, and account
+                    management powered by Clerk.
+                  </li>
+                  <li>
+                    File Upload: Easy drag-and-drop functionality for seamless
+                    uploading of files and PDF documents.
+                  </li>
+                  <li>
+                    File Storage: Reliable storage powered by Firebase Cloud
+                    Storage, ensuring scalability and availability.
+                  </li>
+                </ul>
+              </p>
+            </div>
           </div>
-          <div className="w-full md:w-1/2 flex items-center justify-center">
-            <Image src={drop} alt="DropBox" width={400} height={200} />
+          <div className="flex flex-col-reverse md:flex-row p-10 md:items-center items-start justify-evenly">
+            <div className="w-full md:w-1/2">
+              Responsive Design: Tailwind CSS enables a responsive layout for
+              optimal viewing on various devices. Real-time Updates: Zustand
+              provides real-time updates on file actions for enhanced user
+              engagement. Secure Data Handling: Encryption, access control, and
+              secure transmission protocols prioritize user data security. PDF
+              Viewing: Integrated lightweight PDF viewer library (Shadcn) allows
+              users to preview PDFs within the application.
+            </div>
+            <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden">
+              <Image
+                src={drop}
+                alt="DropBox"
+                width={400}
+                height={200}
+                className="w-full"
+              />
+            </div>
           </div>
         </div>
       </div>
