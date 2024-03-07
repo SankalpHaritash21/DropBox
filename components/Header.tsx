@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import drop from "@/public/doropbox1.webp";
+import drop from "@/public/Dropbox.svg";
 import { SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 import { ThemeToggle } from "./ThemeToggler";
 

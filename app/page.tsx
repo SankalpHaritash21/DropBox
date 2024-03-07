@@ -33,8 +33,8 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex flex-col  w-full justify-evenly">
-          <div className="flex md:flex-row flex-col justify-evenly mt-10 mb-3 p-10">
-            <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden rounded-2xl ">
+          <div className="flex md:flex-row flex-col justify-evenly my-5">
+            <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden rounded-2xl p-2">
               <Image
                 src={Dropbox}
                 alt="Dropbox"
@@ -43,9 +43,9 @@ export default function Home() {
                 className="w-full rounded-2xl"
               />
             </div>
-            <div className="w-full md:w-1/2 flex flex-col md:items-center items-start justify-center h-80 overflow-hidden p-10">
-              <h2 className="text-lg md:text-2xl font-bold mb-2">Feature</h2>
-              <p className="text-gray-30000">
+            <div className="w-full md:w-1/2 flex flex-col md:items-center items-start justify-center overflow-hidden p-2">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Feature</h2>
+              <p className="text-gray-300">
                 <ul>
                   <li>
                     User Authentication: Secure sign-up, sign-in, and account
@@ -63,8 +63,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row p-10 md:items-center items-start justify-evenly">
-            <div className="w-full md:w-1/2 p-5">
+          <div className="flex flex-col-reverse md:flex-row md:items-center items-start justify-evenly">
+            <div className="w-full md:w-1/2 p-1">
               <ul>
                 <li>
                   Responsive Design: Tailwind CSS enables a responsive layout
@@ -80,7 +80,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden">
+            <div className="w-full md:w-1/2 flex items-center justify-center h-80 overflow-hidden p-2">
               <Image
                 src={drop}
                 alt="DropBox"
